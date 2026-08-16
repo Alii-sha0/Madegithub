@@ -3,86 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Carta Andry</title>
-    <link rel="icon" href= "PaginasDesisiones/Carta1.ico" type="image/x-icon">
-</head>
-<body>
-    
-    <img src="Imagenes/Cartas/Cartas/CartaAzul.png" alt="Carta Andry" style="width: 100%; height: 60%;">
+    <link rel="icon" href="PaginasDesisiones/Carta1.ico" type="image/x-icon">
+    <style>
+        /* Reset box-sizing para que los cálculos sean previsibles */
+        *, *::before, *::after { box-sizing: border-box; }
 
-    <h2>¡Feliz cumpleaños! 
-    </h2>
-   
-    <div id="texto">
-      <p> En primer lugar, espero que te guste esta página. La hice pensando en cosas que me recuerdan a ti.</p>
+        body {
+            margin: 0;
+            background-color: rgb(248, 240, 225);
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+        }
 
-      <p> Recuerdo las veces que creabas cosas para mí, y me hacías sentir especial. También la página que me mostraste alguna vez, y sinceramente, me gustó mucho. Por eso, decidí hacer algo similar para ti, y espero que te guste. </p>
+        /* Imagen: que ocupe el ancho y su alto máximo se limite con viewport,
+           mantenemos la imagen visible y escalable */
+        img.carta {
+            width: 100%;
+            height: auto;
+            display: block;
+            max-height: 60vh; /* conserva la sensación de "60%" en pantallas grandes */
+            object-fit: cover;
+        }
 
-      <p>En tu cumpleaños y siempre, te deseo lo mejor. Que tengas un bonito día, que tus deseos se cumplan y que te vaya bien tanto ahora como en tus planes a futuro. </p>
-    </div>
+        /* TITULO y TEXTO mantienen position: absolute para conservar el layout de PC */
+        h2 {
+            color: rgba(142, 172, 186, 0.963);
+            position: absolute;
+            /* usamos vh/vw para que escale con la ventana */
+            top: 26vh;
+            left: 30%;
+            font-size: clamp(24px, 3.2vw, 34px);
+            font-family: 'Garamond', serif;
+            text-align: center;
+            border-bottom: 2px solid rgb(176, 150, 93);
+            -webkit-text-stroke: 1.2px darkslategray;
+            margin: 0;
+            padding-bottom: 6px;
+            transform: translateX(0); /* tecla de ajuste en mobile se aplicará cambiando left + translate */
+        }
 
-    <style> 
-           body {
-                background-color: rgb(248, 240, 225);
+        #texto {
+            position: absolute;
+            top: 40vh;    /* originalmente 40% — ahora vh para ajustar con altura del viewport */
+            left: 18%;
+            width: 64%;
+            /* permitimos que el bloque no sobresalga en pantallas muy estrechas */
+            max-width: 70ch;
+        }
+
+        #texto p {
+            color: rgb(64, 85, 120);
+            position: relative; /* los párrafos pueden seguir siendo relativos dentro del contenedor absoluto */
+            width: 100%;
+            font-size: clamp(14px, 1.8vw, 16px);
+            font-style: oblique;
+            text-align: justify;
+            line-height: 1.5;
+            margin: 0 0 1em 0;
+        }
+
+        /* Ajustes finos para pantallas pequeñas, manteniendo position:absolute */
+        @media (max-width: 600px) {
+            /* Reducimos la altura máxima de la imagen para dejar espacio al texto */
+            img.carta { max-height: 42vh; }
+
+            /* Mantener absolute pero mover y centrar con left + translate para que no se corte */
+            h2 {
+                top: 12vh;               /* bajar el título para que quede sobre la imagen en móvil */
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: clamp(20px, 6vw, 26px);
+                width: 80%;
             }
 
+            /* Mantener absolute para que el texto quede en la misma "posición" visual,
+               pero desplazamos y ampliamos ancho para aprovechar el espacio móvil */
             #texto {
-                position: absolute;
-                top: 40%;
-                left: 18%;
-                width: 100%;
-                height: 60%;
+                top: 48vh;      /* desplazamos hacia abajo para evitar solaparse con el título/imagen */
+                left: 5%;
+                width: 90%;
+                max-width: none;
+                padding: 0;
             }
 
             #texto p {
-                color: rgb(64, 85, 120);
-                position: relative;
-                width: 65%;
-                font-size: 16px;
-                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
-                font-style: oblique;
-                text-align: justify;
-            } 
-
-            h2 {
-                color: rgba(142, 172, 186, 0.963);
-                position: absolute;
-                top: 26%;
-                left: 30%;
-                font-size: 34px;
-                font-family: 'Garamond';
-                text-align: center;
-                border-bottom: 2px solid rgb(176, 150, 93);
-                -webkit-text-stroke: 1.2px darkslategray;
+                font-size: clamp(13px, 4vw, 15px);
             }
+        }
 
-            /* ── Celular ── */
-            @media (max-width: 600px) {
-                h2 {
-                    position: relative;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    font-size: 24px;
-                    margin-top: 15px;
-                }
+        /* Opcional: aún más pequeñas (ej. pantallas muy estrechas) */
+        @media (max-width: 380px) {
+            h2 { top: 10vh; font-size: 18px; }
+            #texto { top: 52vh; left: 4%; width: 92%; }
+            img.carta { max-height: 38vh; }
+        }
+    </style>
+</head>
+<body>
 
-                #texto {
-                    position: relative;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: auto;
-                    padding: 10px 15px;
-                }
+    <img class="carta" src="Imagenes/Cartas/Cartas/CartaAzul.png" alt="Carta Andry">
 
-                #texto p {
-                    width: 100%;
-                    font-size: 14px;
-                }
-            }
-        </style>
+    <h2>¡Feliz cumpleaños!</h2>
+
+    <div id="texto">
+      <p> En primer lugar, espero que te guste esta página. La hice pensando en cosas que me recuerdan a ti.</p>
+
+      <p> Recuerdo las veces que creabas cosas para mí, y me hacías sentir especial. También la página que me mostraste alguna vez, y sinceramente, me gustó mucho. Por eso, decidí hacer algo sim[...]</p>
+
+      <p>En tu cumpleaños y siempre, te deseo lo mejor. Que tengas un bonito día, que tus deseos se cumplan y que te vaya bien tanto ahora como en tus planes a futuro. </p>
+    </div>
 
 </body>
 </html>
