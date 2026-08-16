@@ -11,7 +11,7 @@
 </head>
 <body>
     
-    <img src="Imagenes/Cartas/Cartas/CartaAzulOsc.jpg" alt="Carta Mami" style="max-width: 100%; height: 100%;">
+    <img src="Imagenes/Cartas/Cartas/CartaAzulOsc.jpg" alt="Carta Mami" class="imagen-fondo"">
 
     <h2>
         ¡Feliz cumpleaños!
@@ -31,6 +31,16 @@
         body {
             background-color: rgb(15, 13, 44);
         }
+
+        .imagen-fondo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
 
         h2 {
             position: absolute;
@@ -58,14 +68,14 @@
        /* ── Celular ── */
 @media (max-width: 600px) {
     h2 {
-        top: 16%;
+        top: 6%;
         left: 10%;
         width: 80%;
         font-size: 22px;
     }
     p {
-        top: 24%;
-        left: 12%;
+        top: 14%;
+        left: 18%;
         width: 60%;
         font-size: 12px;
     }
