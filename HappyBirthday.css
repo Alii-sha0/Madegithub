@@ -159,11 +159,12 @@ html {
     }
 
     .Numeros {
-        width: 16vw;
-        height: 16vw;
-        font-size: 18px;
+        width: 14vw;
+        height: 14vw;
+        font-size: 15px;
     }
 }
+
 
 
 .enter {
