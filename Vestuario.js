@@ -615,7 +615,7 @@ document.getElementById('clearOutfit').addEventListener('click', ()=>{
 
 document.getElementById('finishBtn').addEventListener('click', async ()=>{
   await saveOutfitState('closet');
-  window.location.href = 'pastel.html';
+  window.location.href = 'Pastel.html';
 });
 
 document.getElementById('backBtn').addEventListener('click', async ()=>{
