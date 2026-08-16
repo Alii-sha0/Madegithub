@@ -3,125 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Carta Andry</title>
-    <link rel="icon" href="PaginasDesisiones/Carta1.ico" type="image/x-icon">
-    <style>
-        /* Reset box-sizing para que los cálculos sean previsibles */
-        *, *::before, *::after { box-sizing: border-box; }
-
-        body {
-            margin: 0;
-            background-color: rgb(248, 240, 225);
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* Contenedor principal para centrar y limitar ancho */
-        .container {
-            max-width: 1000px;
-            margin: 1.2rem auto;
-            padding: 0 1rem 2rem;
-        }
-
-        /* Imagen: que ocupe el ancho y su alto máximo se limite con viewport, mantenemos la imagen visible y escalable */
-        img.carta {
-            width: 100%;
-            height: auto;
-            display: block;
-            max-height: 60vh; /* conserva la sensación de "60%" en pantallas grandes */
-            object-fit: cover;
-            border-radius: 6px;
-        }
-
-        /* TITULO y TEXTO: ahora no usan position:absolute para ser responsive */
-        h2 {
-            color: rgba(142, 172, 186, 0.963);
-            /* centramos y aplicamos margen para que se vea bien sobre/encima de la imagen en pantallas grandes */
-            text-align: center;
-            font-size: clamp(24px, 3.2vw, 34px);
-            font-family: 'Garamond', serif;
-            border-bottom: 2px solid rgb(176, 150, 93);
-            -webkit-text-stroke: 1.2px darkslategray;
-            margin: 0.8rem auto 0.6rem;
-            padding-bottom: 6px;
-            display: inline-block;
-            background: rgba(255,255,255,0.0);
-        }
-
-        /* Contenedor del texto: relativo y centrado, ocupa un ancho adecuado y fluido */
-        #texto {
-            position: relative;
-            margin: 0.8rem auto 0;
-            left: auto;
-            width: min(64%, 70ch);
-            max-width: 100%;
-        }
-
-        #texto p {
-            color: rgb(64, 85, 120);
-            position: relative; /* los párrafos pueden seguir siendo relativos dentro del contenedor */
-            width: 100%;
-            font-size: clamp(14px, 1.8vw, 16px);
-            font-style: oblique;
-            text-align: justify;
-            line-height: 1.5;
-            margin: 0 0 1em 0;
-        }
-
-        /* Para pantallas grandes queremos que el título aparezca parcialmente sobre la imagen.
-           Usamos transform negativo con media query sin usar absolute. */
-        @media (min-width: 900px) {
-            h2 { margin-top: -3.6rem; padding: 0.6rem 1.2rem; background: rgba(248,240,225,0.85); border-radius: 6px; }
-        }
-
-        /* Ajustes finos para pantallas pequeñas */
-        @media (max-width: 600px) {
-            /* Reducimos la altura máxima de la imagen para dejar espacio al texto */
-            img.carta { max-height: 42vh; }
-
-            /* Centramos el título y lo hacemos más pequeño */
-            h2 {
-                font-size: clamp(20px, 6vw, 26px);
-                margin-top: 0.6rem;
-                transform: none;
-            }
-
-            /* Hacemos el bloque de texto más ancho y con más padding para legibilidad en móvil */
-            #texto {
-                width: 92%;
-                margin-top: 0.6rem;
-                padding: 0 4%;
-            }
-
-            #texto p {
-                font-size: clamp(13px, 4vw, 15px);
-            }
-        }
-
-        /* Opcional: aún más pequeñas (ej. pantallas muy estrechas) */
-        @media (max-width: 380px) {
-            h2 { font-size: 18px; }
-            img.carta { max-height: 38vh; }
-            #texto { width: 94%; padding: 0 3%; }
-        }
-    </style>
+    <link rel="icon" href= "PaginasDesisiones/Carta1.ico" type="image/x-icon">
 </head>
 <body>
-<div class="container">
+    
+    <img src="Imagenes/Cartas/Cartas/CartaAzul.png" alt="Carta Andry" style="width: 100%; height: 60%;">
 
-    <img class="carta" src="Imagenes/Cartas/Cartas/CartaAzul.png" alt="Carta Andry">
-
-    <h2>¡Feliz cumpleaños!</h2>
-
+    <h2>¡Feliz cumpleaños! 
+    </h2>
+   
     <div id="texto">
       <p> En primer lugar, espero que te guste esta página. La hice pensando en cosas que me recuerdan a ti.</p>
 
-      <p> Recuerdo las veces que creabas cosas para mí, y me hacías sentir especial. También la página que me mostraste alguna vez, y sinceramente, me gustó mucho. Por eso, decidí hacer algo similar para ti, y espero que te guste.
-      
+      <p> Recuerdo las veces que creabas cosas para mí, y me hacías sentir especial. También la página que me mostraste alguna vez, y sinceramente, me gustó mucho. Por eso, decidí hacer algo similar para ti, y espero que te guste. </p>
+
       <p>En tu cumpleaños y siempre, te deseo lo mejor. Que tengas un bonito día, que tus deseos se cumplan y que te vaya bien tanto ahora como en tus planes a futuro. </p>
     </div>
 
-</div>
+    <style> 
+           body {
+                background-color: rgb(248, 240, 225);
+            }
+
+            #texto {
+                position: absolute;
+                top: 40%;
+                left: 18%;
+                width: 100%;
+                height: 60%;
+            }
+
+            #texto p {
+                color: rgb(64, 85, 120);
+                position: relative;
+                width: 65%;
+                font-size: 16px;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+                font-style: oblique;
+                text-align: justify;
+            } 
+
+            h2 {
+                color: rgba(142, 172, 186, 0.963);
+                position: absolute;
+                top: 26%;
+                left: 30%;
+                font-size: 34px;
+                font-family: 'Garamond';
+                text-align: center;
+                border-bottom: 2px solid rgb(176, 150, 93);
+                -webkit-text-stroke: 1.2px darkslategray;
+            }
+
+        /* ── Celular ── */
+@media (max-width: 600px) {
+    h2 {
+        top: 24%;
+        left: 10%;
+        width: 80%;
+        font-size: 22px;
+    }
+
+    #texto {
+        top: 38%;
+        left: 5%;
+        width: 90%;
+        height: 55%;
+    }
+
+    #texto p {
+        width: 90%;
+        font-size: 12px;
+    }
+}
+        
+        </style>
 
 </body>
 </html>
